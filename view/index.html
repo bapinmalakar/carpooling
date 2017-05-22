@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>LPU CarPooling</title>
+    <link rel="icon" href="images/imageicon.png" type="image/png">
+
+    <link href="css/font-awesome.min.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" />
+
+    <script type="application/x-javascript">
+        addEventListener("load", function() {
+                setTimeout(hideURLbar, 0);
+            },
+            false
+        );
+
+        function hideURLbar() {
+            window.scrollTo(0, 1);
+        }
+    </script>
+
+    <link href="//fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&subset=latin-ext" rel="stylesheet">
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i&subset=cyrillic,cyrillic-ext,greek,greek-ext,latin-ext,vietnamese" rel="stylesheet">
+    <!--//fonts-->
+    <script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/component.css" />
+    <script src="js/modernizr.custom.js"></script>
+    <link rel="stylesheet" href="css/colorbox.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="js/validation.js"></script>
+</head>
+
+<body>
+
+    <div class="w3-slider">
+        <div id="boxgallery" class="boxgallery" data-effect="effect-1">
+            <div class="panel"><img src="images/lpu2.png" alt="Image 1" /></div>
+            <div class="panel"><img src="images/g1.jpg" alt="Image 2" /></div>
+            <div class="panel"><img src="images/1.jpg" alt="Image 3" /></div>
+            <div class="panel"><img src="images/lpu.jpg" alt="Image 4" /></div>
+        </div>
+        <div class="w3layouts-header-title">
+            <h2>No matter where you go, there you are</h2>
+        </div>
+    </div>
+    <!-- /container -->
+
+    <script src="js/classie.js"></script>
+    <script src="js/boxesFx.js"></script>
+    <!-- //js required for banner slider -->
+    <script>
+        new BoxesFx(document.getElementById('boxgallery'));
+    </script>
+    <!-- //slider -->
+
+    <!-- header -->
+    <header style="margin-top: 17%;">
+        <div class="container">
+            <!-- navigation -->
+            <nav class="navbar navbar-default">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				  </button>
+                    <div class="w3-logo">
+                        <h1><a href="#">LPU CarPooling</a></h1>
+                    </div>
+                </div>
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <li><a class="active" href="index.html">Home</a></li>
+                        <li><a class="scroll" href="#" id="findrideLink">Find a Ride</a></li>
+                        <li><a class="scroll" href="#" id="loginLink">Login</a></li>
+                        <li><a class="scroll" href="#gallery">About</a></li>
+                        <li><a class="scroll" href="#" id="offerRideLink">Offer a Ride</a></li>
+
+                        <li><a class="scroll" href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <!-- /.navbar-collapse -->
+            </nav>
+            <div class="clearfix"></div>
+            <!-- //navigation -->
+        </div>
+    </header>
+    <!-- //header -->
+
+    <!-- about-section -->
+    <div class="w3-agileits-about-section" id="findride">
+        <div class="container">
+            <div class="w3agile-about-section-head text-center">
+                <h3>Find a Ride</h3>
+                <span></span>
+            </div>
+            <div class="about-section-grids">
+                <div class="col-md-5 wthree-about-section-grid">
+                    <img src="images/carpool.png" alt="" />
+                </div>
+                <div class="col-md-4 wthree-about-section-grid" style="margin-left: 10%;">
+                    <div class="row">
+                        <h5>A shared trip is a better trip</h5>
+                    </div>
+                    <div><span class="col-md-2 glyphicon glyphicon-record" style="font-size: 30px;color: green;padding-left: 7%;"></span>
+                        <input list="browsers" class="col-md-10 form-control" style="width: 83%" placeholder="Leaving From...." name="browser">
+                        <datalist id="browsers">
+    							<option value="Internet Explorer">
+    							<option value="Firefox">
+    							<option value="Chrome">
+    							<option value="Opera">
+    							<option value="Safari">
+  							</datalist>
+                    </div>
+                    <br>
+                    <br>
+
+                    <div><span class="col-md-2 glyphicon glyphicon-record" style="font-size: 30px; margin-top: 5%;color: green;padding-left: 7%;"></span>
+                        <input list="browsers" class="col-md-10 form-control" style="width: 83%;margin-top: 5%;" placeholder="Going To...." name="browser">
+                        <datalist id="browsers">
+    							<option value="Internet Explorer">
+    							<option value="Firefox">
+    							<option value="Chrome">
+    							<option value="Opera">
+    							<option value="Safari">
+  							</datalist>
+                    </div>
+
+
+                    <div class='input-group date' id='datetimepicker8' style="position: relative; margin-left: 17%;display: table;border-collapse: separate;
+padding-top: 5%;">
+                        <input type="date" class="form-control" placeholder="Date" />
+                        <span class="input-group-addon">
+                    <span class="fa fa-calendar">
+                    </span>
+                        </span>
+                    </div>
+
+                </div>
+
+                <div class="col-md-3 wthree-about-section-grid" style="margin-left: 15%;">
+                    <button type="submit" class="btn btn-primary btn-lg active" style="color: #fff;margin-left: 95%;
+margin-top: 15%; background-color: #337ab7;border-color: #2e6da4;margin-top: 13%;margin-left: 40%;">Find Ride</button>
+
+                </div>
+
+
+                <div class="clearfix"></div>
+            </div>
+        </div>
+    </div>
+    <!-- //about-section -->
+
+    <!-- specials -->
+    <div class="agileits-w3layouts-specials" id="signup">
+        <h3>SIGN UP</h3>
+        <span></span>
+        <div class="special-grids">
+            <div class="col-md-6 special-left l-grids">
+                <figure class="effect-bubba" style="width: 73%; margin-left: 9%;">
+                    <img src="images/carpool12.png" alt="" />
+                    <figcaption>
+                        <h4>LPU CARPOOLING</h4>
+
+                    </figcaption>
+                </figure>
+            </div>
+            <div class="col-md-6 special-right form-group" style="padding: 45px 50px 0 50px;padding-left: 5%;padding-right: 24%;">
+                <div id="signAlert" class="alert alert-warning" style="font-size: medium;">Hello</div>
+                <div id="signForm">
+                    <div class="row">
+                        <input type="text" id="name" class="form-control" placeholder="Name" required/>
+                        <p id="natext" style="color: red;"></p>
+                    </div>
+
+                    <div class="row" style="margin-top:2%;">
+                        <input type="email" id="email" class="form-control" placeholder="Enter Your email" required/>
+                        <p id="etext" style="color: red;"></p>
+                    </div>
+
+                    <div class="row" style="margin-top:2%;">
+                        <input type="number" id="pnumber" class="form-control" placeholder="Enter Your Phone Number" required/>
+                        <p id="ntext" style="color: red;"></p>
+                    </div>
+
+                    <div class="row" style="margin-top:2%;">
+                        <input type="password" id="pass" class="form-control" placeholder="Password" required/>
+                        <p id="ptext" style="color: red;"></p>
+                    </div>
+
+                    <div class="row" style="margin-top:2%;">
+                        <label class="radio-inline" style="margin-left: -7%; padding-left: 19%;"><input type="radio" id="male" class="radio-inline" name="optradio"><h5 style="color:green;">Male</h5></label>
+                        <label class="radio-inline"><input type="radio" class="radio-inline" name="optradio"> <h5 style="color:green;" id="female">Female</h5></label>
+                        <p id="gtext" style="color: red;"></p>
+                    </div>
+
+                    <div class="row" style="margin-top:10%;margin-left: 33%;">
+                        <input type="button" id="signbtn" class="btn btn-primary btn-lg active" value="Submit">
+                    </div>
+                </div>
+
+                <div id="otpForm">
+                    <div class="row" style="margin-top:2%;">
+                        <input type="number" id="otpin" class="form-control" placeholder="Enter Your Phone Number" required/>
+                        <p id="otptext" style="color: red;"></p>
+                    </div>
+                    <div class="row" style="margin-top:10%;">
+                        <input type="button" id="otpbtn" class="col-sm-4 btn btn-primary btn-lg active" value="Verify">
+                        <input type="button" id="rsend" class="col-sm-4 btn btn-primary btn-lg active" value="Resend Code">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+    <div class="where-spl">
+
+
+        <div class="clearfix"></div>
+    </div>
+
+    <div class="clearfix"></div>
+    </div>
+    </div>
+    <!-- specials -->
+
+    <!-- team -->
+    <div class="team" id="signup">
+        <div class="container">
+            <div class="title">
+                <h3>thousands of rides available every day. Where do you want to go? See our most popular rides
+
+                </h3>
+                <span class="w3-line"></span>
+            </div>
+            <div class="team-w3ls-row">
+                <div class="col-md-3 team-grids thumbnail">
+
+                    <a class="lead" style="text-decoration:none;">
+                        <span class="row" style="margin-top:2%; margin-right: inherit;">LPU
+							</span>
+                        <span class="row" style="margin-bottom:3%;">Rama Mandhi
+							</span>
+                        <span class="row" style="position: absolute;top: 48px;right: 60px;font-size: 15px;color: #00A87E;
+                                     font-weight: 400;text-align: right;">Price From  <strong style="display: block;margin: -5px 0 0;font-size: 36px;">₹50</strong>
+                            </span>
+                    </a>
+
+
+                </div>
+
+                <div class="col-md-3 team-grids thumbnail" style="margin-left: 10%;">
+                    <a class="lead" style="text-decoration:none;">
+                        <span class="row" style="margin-top:2%; margin-right: inherit;">LPU
+							</span>
+                        <span class="row" style="margin-bottom:3%;">Phagwara
+							</span>
+                        <span class="row" style="position: absolute;top: 48px;right: 60px;font-size: 15px;color: #00A87E;
+                                     font-weight: 400;text-align: right;">Price From  
+									 <strong style="display: block;margin: -5px 0 0;font-size: 36px;"> ₹20 </strong>
+                            </span>
+                    </a>
+
+                </div>
+
+                <div class="col-md-3 team-grids thumbnail " style="margin-left: 12%;">
+                    <a class="lead" style="text-decoration:none;">
+                        <span class="row" style="margin-top:2%; margin-right: inherit;">Jalandhar
+							</span>
+                        <span class="row" style="margin-bottom:3%;">LPU
+							</span>
+                        <span class="row" style="position: absolute;top: 48px;right: 60px;font-size: 15px;color: #00A87E;
+                                     font-weight: 400;text-align: right;">Price From  
+									 <strong style="display: block;margin: -5px 0 0;font-size: 36px;"> ₹30 </strong>
+                            </span>
+                    </a>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- //team -->
+
+    <!-- gallery -->
+    <div class="gallery text-center" id="gallery">
+        <div class="container">
+            <div class="title">
+                <h3 style="">
+                    3 things you'll love about LPU CarPooling
+                </h3>
+                <span class="w3-line"></span>
+            </div>
+
+            <div class="team-w3ls-row">
+                <div class="col-md-3 team-grids" style="float: left;width: 319px;list-style: none;">
+                    <div class="row" style="display: block;height: 216px; margin-left:-35%;line-height: 116px;color: #0086BF;text-align: center;">
+
+                        <img src="images/user.png">
+                    </div>
+
+                    <div class="row1" style="margin-top:3%;">
+                        <h3> You're in control</h3>
+                    </div>
+
+                    <div class="row">
+                        <h4 style="margin-right: 29%;margin-top:6%; color: #727272 !important;">Verified member profiles and ratings mean you know exactly who you're travelling with. </h4>
+                    </div>
+
+                </div>
+
+
+
+                <div class="col-md-4 team-grids" style="float: left;width: 319px;list-style: none; margin-left:12%;">
+                    <div class="row" style="display: block;height: 216px; margin-left:-23%;line-height: 116px;color: #0086BF;text-align: center;">
+
+                        <img src="images/user2.png">
+                    </div>
+
+                    <div class="row1" style=" margin-top: 2%;margin-left: 14%;">
+                        <h3 style="letter-spacing: 1px;margin-left: -4%;"> Carpool with confidence </h3>
+                    </div>
+
+                    <div class="row" style="margin-right: -15px; margin-left: -17px;">
+                        <h4 style="margin-right: 29%;margin-top:6%; color: #727272 !important; width: 87%;">
+                            Government ID verification adds another level of security to member profiles. </h4>
+                    </div>
+
+                </div>
+
+                <div class="col-md-4 team-grids" style="margin-left: -2%;">
+                    <div class="row" style="margin-left:11%;">
+                        <img src="images/going2.png" style="margin-left:25%;">
+                    </div>
+
+                    <div class="row1" style="    margin-top: -5%; margin-left: 19%; margin-right: -16%;">
+                        <h3 style="letter-spacing: 1px; margin-left: 31%;margin-top: 19%; margin-bottom: 9%;">Going Faster</h3>
+                    </div>
+
+                    <div class="row2" style="margin-left: 50%;">
+                        <h4 style="color: #727272 !important;">No need to travel across town, catch a ride leaving near you. </h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+
+    <!-- //gallery -->
+
+    <!-- news-section -->
+    <div class="news-section" id="offerride">
+        <div class="container rounded" style="background-color: beige;">
+            <div class="agileits-news-section-head text-center">
+                <h3 class="agileits_head" style="margin-top: 4%;">Offer A Ride</h3>
+                <span class="w3-line"></span>
+            </div>
+
+            <div class="col-md-6">
+                <img src="images/carpool1.png">
+            </div>
+
+            <div class="col-md-4">
+                <div class="row" style="margin-left:34%;">
+                    <h3> Driving in your car soon?</h3>
+                </div>
+
+                <div class="row" style="margin-top:9%;margin-left: 33%;">
+
+                    <h4>Carpooling with LPU means you save money and others can travel.</h4>
+                </div>
+
+                <div class="row" style="margin-top: 17%; margin-left: 49%;">
+                    <input type="submit" value="Offer a Ride" class="btn btn-primary btn-lg active">
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+    <!-- //news-section -->
+
+    <!-- testimonial -->
+    <!-- //testimonial -->
+
+    <!-- contact-section -->
+    <div class="contact-section" id="contact">
+        <div class="container">
+            <div class="contact-section-head text-center">
+                <h3>Contact us</h3>
+                <span></span>
+            </div>
+            <div class="agileits-map">
+                <iframe src="https://www.google.co.in/maps/place/Lovely+Professional+University+-+LPU+Jalandar/@31.255409,75.7035684,17z/data=!3m1!4b1!4m5!3m4!1s0x391a5a594d22b88d:0x4cc934c58d0992ec!8m2!3d31.2554044!4d75.7057571?hl=en" allowfullscreen></iframe>
+            </div>
+            <div class="w3l-contact-form-bottom">
+                <div class="col-md-4 w3ls-address">
+                    <address>
+								<strong>Address :</strong>
+								<p>SCA</p>
+								<p>Lovely Professional University</p>
+								<p class="bottom">Punjab</p>
+								<strong><abbr title="phone">Phone :</abbr></strong>
+								<p>+91-0001112223</p>
+							</address>
+                </div>
+                <form action="#" method="get">
+                    <div class="col-md-4 w3l-contact-form">
+                        <div class="w3l-contact-form-row">
+                            <div>
+                                <span>Name</span>
+                                <input type="text" class="text" placeholder="" required />
+                            </div>
+                            <div>
+                                <span>Email</span>
+                                <input type="email" class="text" placeholder="" required />
+                            </div>
+                            <div>
+                                <span>phone</span>
+                                <input type="text" class="text" placeholder="" required />
+                            </div>
+                            <div class="clearfix"> </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 w3l-contact-form-row comments">
+                        <div>
+                            <span>Comments</span>
+                            <textarea onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '';}"></textarea>
+                        </div>
+                        <input type="submit" class="btn btn-danger btn-lg active" value="Submit" />
+                    </div>
+                    <div class="clearfix"></div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- //contact-section -->
+
+    <!-- footer-section -->
+    <footer>
+        <div class="container">
+            <div class="w3ls-icons">
+                <a href="#" title="facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                <a href="#" title="twitter"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                <a href="#" title="google-plus"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
+                <a href="#" title="linkedin"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+            </div>
+
+            <div class="clearfix"></div>
+        </div>
+    </footer>
+    <!-- footer-section -->
+
+    <!-- here stars scrolling icon -->
+    <script type="text/javascript">
+        $(document).ready(function() {
+            /*
+            	var defaults = {
+            	containerID: 'toTop', // fading element id
+            	containerHoverID: 'toTopHover', // fading element hover id
+            	scrollSpeed: 1200,
+            	easingType: 'linear' 
+            	};
+            */
+
+            $().UItoTop({
+                easingType: 'easeOutQuart'
+            });
+
+        });
+    </script>
+    <!-- start-smoth-scrolling -->
+    <script type="text/javascript" src="js/move-top.js"></script>
+    <script type="text/javascript" src="js/easing.js"></script>
+    <script type="text/javascript">
+        jQuery(document).ready(function($) {
+            $(".scroll").click(function(event) {
+                event.preventDefault();
+                $('html,body').animate({
+                    scrollTop: $(this.hash).offset().top()
+                }, 1000);
+            });
+        });
+    </script>
+    <!-- start-smoth-scrolling -->
+    <!-- //here ends scrolling icon -->
+</body>
+
+</html>

@@ -1,0 +1,426 @@
+<html>
+
+<head>
+    <title>Welcome</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+
+    <link rel="stylesheet" href="./css/detailcontent.css" />
+    <script src="https://cdn.jsdelivr.net/sweetalert2/6.4.4/sweetalert2.js"></script>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://api.filepicker.io/v2/filepicker.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/sweetalert2/6.4.4/sweetalert2.min.js" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/sweetalert2/6.4.4/sweetalert2.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/sweetalert2/6.4.4/sweetalert2.css" />
+    <script src="./js/offerride.js"></script>
+    <script src="./js/rideFind.js"></script>
+    <script src="./js/pnumberUpdae.js"></script>
+
+
+    <script src="https://code.jquery.com/ui/1.8.23/jquery-ui.js" integrity="sha256-lFA8dPmfmR4AQorTbla7C2W0aborhztLt0IQFLAVBTQ=" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header" style="width: 6%;">
+                <img id="profileImage" src="./images/Lovely_Professional_University_Seal.jpg" alt="profile" class="img-circle img-responsive" style="float: left;height: 50px; width: 100%;">
+            </div>
+            <div class="navbar-left" style="margin-left: 1%;">
+                <h4 id="username" class="text-center" style="color: white;">Biplab Malakar</h4>
+            </div>
+            <div class=" navbar-right ">
+                <button id="homePage" type="button" class="btn btn-default navbar-btn">Home</button>
+                <button id="pupload" type="button" class="btn btn-default navbar-btn">Upload Profile</button>
+                <button id="editNumber" type="button" class="btn btn-default navbar-btn" data-toggle="modal" data-target="#phoneNumberEdit">Edit Phone Number</button>
+                <button id="offerModelShow" type="button" class="btn btn-default navbar-btn" data-toggle="modal" data-target="#offerModal">Offer A Ride</button>
+                <button id="rieModalShow" type="button" class="btn btn-default navbar-btn" data-toggle="modal" data-target="#findRide">Find Ride</button>
+                <button id="offerRideShowList" type="button" class="btn btn-default navbar-btn">Offered Rides</button>
+                <button id="bookedRideShowList" type="button" class="btn btn-default navbar-btn">My Rides</button>
+                <button id="logoutbtn" type="button" class="btn btn-default navbar-btn ">Logout</button>
+            </div>
+        </div>
+    </nav>
+    <div id="alertDiv" class="alert alert-info text-center" style="margin-top: -2%; width: 99.9%;"></div>
+    <div id="content-body" style="margin-top: 1%;">
+        <div id="userPersonalDetails" style="float: left; width: 15%; height: 100vh;border-right-style: solid;border-right-color: burlywood;box-shadow: 14px -5px 30px #ab5bab;background: cadetblue;">
+            <div id="offerRideDateList" style="margin-top: 3%;">
+                <b><label id="noOfOfferRide" class="label label-primary" style="font-size: small;color: aqua;">Number Of Ride Offered</label></b>
+                <ul style="margin-top: 6%;    margin-right: 9%;border-right-style: solid;">
+
+                </ul>
+            </div>
+            <div id="rideTakedDateList" style="margin-top: 2%;">
+                <label id="noOfTakedRide" class="label label-primary" style="font-size: small;color: aqua;">Number Of Ride You Taked</label>
+                <ul style="margin-top: 6%;margin-right: 9%;border-right-style: solid;border-right-color:red;">
+
+                </ul>
+            </div>
+        </div>
+        <div id="content-page" style="margin-left: 1%;float:left; width: 62%;height: 100vh;">
+            <div id="findRideOptions">
+                
+
+            </div>
+            <div id="viewMyOfferRide">
+            </div>
+        </div>
+        <div id="notify-page" style="margin-left: 1%;float:left; width: 21%; border-left-style:solid;height: 100vh; border-left-color: burlywood;box-shadow: -14px -5px 30px #ab5bab;background: darkcyan;">
+            <div id="offerRideNotify" style="height: 48%; width: 100%; overflow-y: scroll">
+
+            </div>
+            <hr>
+            <div id="rideTakeNotify" style="height: 48%; width: 100%; overflow-y: scroll">
+
+            </div>
+        </div>
+    </div>
+
+
+
+    <!---Model For Register Car For Ride-->
+    <div id="offerModal" class="modal fade" role="dialog">
+        <div class="modal-dialog ">
+
+            <!-- Modal content-->
+            <div class="modal-content ">
+                <div class="modal-header" style="height:41px; ">
+                    <button type="button" class="close" data-dismiss="modal" style=" color: darkred;">&times;</button>
+                    <h4 style="color: darkcyan;" class="modal-title">Register Your Vechicles For Offer A Ride</h4>
+                </div>
+                <div class="modal-body ">
+                    <div class="row ">
+                        <label id="userName" style="margin-left: 1%;float: left; width: 25%;color: darkgrey;font-family: cursive; "> </label>
+                        <label id="userNumber" style="margin-left: 1%;float: left; width: 25%;color: darkgrey;font-family: cursive; "> </label>
+                        <label id="useremail" style="margin-left: 1%;float: left; width: 25%;color: darkgrey;font-family: cursive; "></label>
+                    </div>
+                    <div id="vechicle_details_model">
+                        <div class="row " style="margin-top: 0.50%; margin-left: 1%; ">
+                            <div class="row form-group">
+                                <input id="offerSource" type="text" placeholder="Enter sourceText" class="form-control" style="width: 80% ">
+                                <p id="sourceText" style="color: red "></p>
+                            </div>
+                            <div class="row form-group">
+                                <input id="offerDest" type="text " placeholder="Enter Destination" class="form-control" style="width: 80% ">
+                                <p id="dstinationText" style="color: red; "></p>
+                            </div>
+                            <div class="row form-group">
+                                <div class="row" style="margin-left: -1% ">
+                                    <input id="offerDate" type="date" placeholder="Select Date" class="form-control" style="width: 78%; margin-left: 1%; ">
+                                    <p id="offerDateText" style="color: red; margin-left: 1%; "></p>
+                                </div>
+                                <div class="row ">
+                                    <div id="offerHour" class="col-sm-3 " style="margin-top: 1%; ">
+                                        <select id="rideHour">
+                                            <option value="Hour">Hour</option>
+                                            <option value="0">0</option>
+                                            <option value="1">1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                            <option value="4">4</option>
+                                            <option value="5">5</option>
+                                            <option value="6">6</option>
+                                            <option value="7">7</option>
+                                            <option value="8">8</option>
+                                            <option value="9">9</option>
+                                            <option value="10">10</option>
+                                            <option value="11">11</option>
+                                            <option value="12">12</option>
+                                            <option value="13">13</option>
+                                            <option value="14">14</option>
+                                            <option value="15">15</option>
+                                            <option value="16">16</option>
+                                            <option value="17">17</option>
+                                            <option value="18">18</option>
+                                            <option value="19">19</option>
+                                            <option value="20">20</option>
+                                            <option value="21">21</option>
+                                            <option value="22">22</option>
+                                            <option value="23">23</option>
+                                        </select>
+                                        <p id="rideHourText" style="color: red;margin-top: 2%; "></p>
+                                    </div>
+                                    <div id="offerMinute" class="col-sm-3" style="margin-top: 1%; ">
+                                        <select id="rideMinute">
+                                            <option value="0">0</option>
+                                            <option value="5">5</option>
+                                            <option value= "10">10</option>
+                                            <option value= "15">15</option>
+                                            <option value= "20">20</option>
+                                            <option value= "25">25</option>
+                                            <option value= "30">30</option>
+                                            <option value= "35">35</option>
+                                            <option value= "40">40</option>
+                                            <option value= "45">45</option>
+                                            <option value= "50">50</option>
+                                            <option value="55">55</option>
+                                        </select>
+                                        <p id="rideMinuteText" style="color: red;margin-top: 2%; "></p>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <label style="margin-top: 2.5%;">Number of People</label>
+                                        <select id="number_people">
+                                            <option selected="selected" value="1">1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                            <option value="4">4</option>
+                                            <option value="5">5</option>
+                                            <option value="6">6</option>
+                                            <option value="7">7</option>
+                                            <option value="8">8</option>
+                                            <option value="9">9</option>
+                                            <option value="10">10</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row form-group ">
+                                <input id="price" type="number" placeholder="Enter Fair" value="10" class="form-control" style="width: 80% ">
+                                <p id="priceText" style="color: red "></p>
+                            </div>
+                            <div class="row form-group ">
+                                <input id="carRegis" type="text " placeholder="Vechile Register Number " class="form-control " style="width: 80% ">
+                                <p id="regisText" style="color: red "></p>
+                            </div>
+                            <div class="row form-group">
+                                <label>Select Vechele Type</label>
+                                <div>
+                                    <input id="offercar" type="radio" value="CAR " name="vechicle ">Car
+                                    <input id="offerbike" type="radio" value="BIKE " name="vechicle ">BIKE</div>
+                                <p id="typeText" style="color: red "></p>
+                            </div>
+                            <div class="row form-group">
+                                <div style="float: left; width: 38%; ">
+                                    <butoon id="drivingLienceUpload" class="btn btn-primary form-control " style="width: 98% ">Upload Driving Lience</butoon>
+                                    <p id="drivingLienceText" style="color: red; "></p>
+                                </div>
+                                <div style="float: left; width: 38%;margin-left: 1%; "> <button id="vecheicleImageUpload" class="btn btn-primary form-control " style="width: 98% ">Upload Vechicle Picture</button>
+                                    <p id="vechicleImageText" style="color: red "></p>
+                                </div>
+                            </div>
+                            <div>
+                                <div style="float: left; width: 38%;height: 100px; ">
+                                    <img id="drivingLienceImage" src="./images/driving.jpg " alt="picture " class="img-thumbnail img-responsive " style="height: 100%;width: 100px; ">
+                                </div>
+                                <div style="float: left; width: 38%;height: 100px; margin-left: 1%; ">
+                                    <img id="vechicleImage" src="./images/carimg.jpg " alt="picture " class="img-thumbnail img-responsive " style="height: 100%;width: 100px; ">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="vechicle_details_model_wait" class="alert alert-info" style="margin-top: 30%; margin-left: 5%; ">Wait, We Are In Process</div>
+                </div>
+                <div class="modal-footer " style="height: 40px; ">
+                    <button id="offerSubmit" type="button " class="btn btn-default" style="margin-top: -2%;">Save</button>
+                    <button type="button" class="btn btn-default " data-dismiss="modal" style="margin-top: -2%; ">Close</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Model For Find Ride-->
+    <div id="findRide" class="modal fade" role="dialog">
+        <div class="modal-dialog ">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header" style="height:41px;">
+                    <button type="button" class="close" data-dismiss="modal" style="color: darkred;">&times;</button>
+                    <h4 style="color: darkcyan; " class="modal-title ">Find Your Ride</h4>
+                </div>
+                <div class="modal-body ">
+                    <div class="alert alert-warning" id="rideAlert"></div>
+                    <div id="rideForm">
+                        <div class="row">
+                            <label id="riderName" style="margin-left: 1%;float: left; width: 25%;color: darkgrey;font-family: cursive;"> </label>
+                            <label id="riderNumber" style="margin-left: 1%;float: left; width: 25%;color: darkgrey;font-family: cursive;"> </label>
+                            <label id="rideremail" style="margin-left: 1%;float: left; width: 25%;color: darkgrey;font-family: cursive;"></label>
+                        </div>
+                        <div class="row" class="form-group" style="margin-left: 1%;">
+                            <div class="row">
+                                <input id="riderSource" type="text" placeholder="Enter Source Place" class="form-control" style="width: 80%" />
+                                <p id="riderSourceText" style="color: red; "></p>
+                            </div>
+                            <div class="row ">
+                                <input id="riderDestination" type="text" placeholder="Enter Destination Place" class="form-control" style="width: 80%" />
+                                <p id="riderDestText" style="color: red; "></p>
+                            </div>
+                            <div class="row ">
+                                <input id="riderDate" type="date" placeholder="Enter Journey Date" class="form-control" style="width: 80%; " />
+                                <p id="riderDateText" style="color: red; "></p>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-5">
+                                    <label>Journey Hour</label>
+                                    <select id="hour">
+                                        <option value= "0" selected= "selected">0</option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5</option>
+                                        <option value="6">6</option>
+                                        <option value="7">7</option>
+                                        <option value="8">8</option>
+                                        <option value="9">9</option>
+                                        <option value="10">10</option>
+                                        <option value="11">11</option>
+                                        <option value="12">12</option>
+                                        <option value="13">13</option>
+                                        <option value="14">14</option>
+                                        <option value="15">15</option>
+                                        <option value="16">16</option>
+                                        <option value="17">17</option>
+                                        <option value="18">18</option>
+                                        <option value="19">19</option>
+                                        <option value="20">20</option>
+                                        <option value="21">21</option>
+                                        <option value="22">22</option>
+                                        <option value="23">23</option>
+                                    </select>
+                                </div>
+                                <div class="col-sm-1"></div>
+                                <div class="col-sm-5">
+                                    <label>Journey Minute</label>
+                                    <select id="minute">
+                                    <option value="0" selected ="selected">0</option>
+                                    <option value="5">5</option>
+                                    <option value="10">10</option>
+                                    <option value="15">15</option>
+                                    <option value="20">20</option>
+                                    <option value="25">25</option>
+                                    <option value="30">30</option>
+                                    <option value="35">35</option>
+                                    <option value="40">40</option>
+                                    <option value="45">45</option>
+                                    <option value="50">50</option>
+                                    <option value="55">55</option>
+                                </select>
+                                </div>
+                            </div>
+                            <div class="row" style="margin-left: 1%;">
+                                <label class="row">Select Card Type</label>
+                                <div>
+                                    <input id="adhar" name="card_type" type="radio" value="ADHAR CARD">Adhar Card
+                                    <input id="pan" name="card_type" type="radio" value="PAN CARD">Pan Card
+                                    <input id="voter" name="card_type" type="radio" value="VOTER CARD">Voter Card
+                                    <input id="lpu" name="card_type" type="radio" value="LPU CARD">LPU Card
+                                    <p id="cardTypeText" style="color: red; "></p>
+                                </div>
+                                <div class="row" style="margin-left: 1%;">
+                                    <div class="row">
+                                        <input id="adharNumber" type="text" placeholder="Enter 12 Digit Adhar Card Number" class="form-control" style="width: 50%; ">
+                                        <p id="adharText" style="color: red; "></p>
+                                    </div>
+                                    <div class="row ">
+                                        <input id="panNumber" type="text" placeholder="Enter Pan Card Number" class="form-control" style="width: 50%; ">
+                                        <p id="panText" style="color: red; "></p>
+                                    </div>
+                                    <div class="row">
+                                        <input id="voterNumber" type="text" placeholder="Enter Voter ID Card Number" class="form-control" style="width: 50%; ">
+                                        <p id="voterText" style="color: red; "></p>
+                                    </div>
+                                    <div class="row">
+                                        <input id="lpuNumber" type="text" placeholder="Enter 8 Digit LPU Card Number" class="form-control" style="width: 50%; ">
+                                        <p id="lpuText" style="color: red; "></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer" style="height: 40px;">
+                    <button id="findSave" type="button" class="btn btn-default" style="margin-top: -2%;">Find</button>
+                    <button id="rideModelClose" type="button" class="btn btn-default" style="margin-top: -2%;">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Image Show Div-->
+    <div id="imgShowDiv" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" style="color: darkred;">&times;</button>
+                    <h4 id="imgShowTitle" style="color: darkcyan; " class="modal-title ">See Image</h4>
+                </div>
+                <div class="modal-body">
+                    <img id="imgModalImgSrc" class="img-rounded img-responsive" src="./images/lpu.jpg" alt="View Image" style="height: 350px; width: 100%; border: solid;" />
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Phone Number Edit-->
+    <div id="phoneNumberEdit" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" style="color: darkred;">&times;</button>
+                    <h4 style="color: darkcyan; " class="modal-title ">Edit Your Number</h4>
+                </div>
+                <div class="modal-body">
+                    <div id="pupdatealert" class="alert alert-warning"></div>
+                    <div class="row">
+                        <input id="pnumber" type="text" class="form-control" palceholder="Enter Number" />
+                        <p id="phoneUpdateText" style="color: red;"></p>
+                    </div>
+                    <div class="row">
+                        <input id="alterPNumber" type="number" class="form-control" placeholder="Enter Alternate Number" />
+                        <p id="AlterPhoneUpdateText" style="color: red;"></p>
+                    </div>
+                </div>
+                <div class="modal-footer" style="height: 55px;">
+                    <button id="pUpdateBtn" type="button" class="btn btn-primary">Update</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Load Modal-->
+    <div id="loadModel" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body">
+                     <img src="./images/loading.gif" style="height: 140px; width: 100px;" alt="In Process" />
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Passenger Details Show-->
+    <div id="passengerDetailsModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" style="color: darkred;">&times;</button>
+                    <h4 style="color: darkcyan; " class="modal-title ">Your Passenger Details</h4>
+                </div>
+                <div class="modal-body">
+                   <table class="table">
+                       <thead class="text-center">
+                           <tr>
+                               <th>SL</th>
+                               <th>Picture</th>
+                               <th>Name</th>
+                               <th>Phone Number</th>
+                           </tr>
+                       </thead>
+                       <tbody>
+                       </tbody>
+                   </table>
+                </div>
+            </div>
+        </div
+    </div>
+</body>
+
+</html>

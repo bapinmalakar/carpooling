@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="./js/loginValidation.js"></script>
+    <script src="./js/validation.js"></script>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="info text-center">
+            <h1>CarPooling </h1>
+        </div>
+    </div>
+    <div style="margin-left: 2%; float: left; width: 58%; margin-top: 7.5%;">
+        <div id="signAlert" class="alert alert-warning" style="font-size: medium; margin-left: -1%; width: 70%;">Hello</div>
+                <div id="signForm">
+                    <div class="row">
+                        <input type="text" id="name" class="form-control" placeholder="Name"  style="width: 68%;" required/>
+                        <p id="natext" style="color: red;"></p>
+                    </div>
+
+                    <div class="row" style="margin-top:2%;">
+                        <input type="email" id="email" class="form-control" placeholder="Enter Your email" style="width: 68%;" required/>
+                        <p id="etext" style="color: red;"></p>
+                    </div>
+
+                    <div class="row" style="margin-top:2%;">
+                        <input type="number" id="pnumber" class="form-control" placeholder="Enter Your Phone Number" style="width: 68%;" required/>
+                        <p id="ntext" style="color: red;"></p>
+                    </div>
+
+                    <div class="row" style="margin-top:2%;">
+                        <input type="password" id="pass" class="form-control" placeholder="Password" style="width: 68%;" required/>
+                        <p id="ptext" style="color: red;"></p>
+                    </div>
+
+                    <div class="row" style="margin-top:2%; margin-left: 6%;">
+                        <label class="radio-inline" style="margin-left: -7%;">
+                            <input type="radio" id="male" class="radio-inline" name="optradio"><h5 style="color:green; margin-top: 5%;">Male</h5>
+                        </label>
+                        <label class="radio-inline">
+                            <input type="radio" class="radio-inline" name="optradio"> <h5 style="color:green;margin-top: 5%;" id="female">Female</h5>
+                        </label>
+                        <p id="gtext" style="color: red; margin-left: -7%;"></p>
+                    </div>
+
+                    <div class="row" style="margin-top:2%;">
+                        <input type="button" id="signbtn" class="btn btn-primary btn-lg active" value="Signup">
+                    </div>
+                </div>
+
+                <div id="otpForm">
+                    <div class="row" style="margin-top:2%;">
+                        <input type="number" id="otpin" class="form-control" placeholder="Enter 5-Digit Code" style="width: 68%;" required/>
+                        <p id="otptext" style="color: red;"></p>
+                    </div>
+                    <div class="row" style="margin-top:2%;">
+                        <input type="button" id="otpbtn" class="col-sm-4 btn btn-primary btn-lg active" value="Verify" style="width: 15%;">
+                        <input type="button" id="rsend" class="col-sm-4 btn btn-primary btn-lg active" style="margin-left: 2%; width: 20%;" value="Resend Code">
+                    </div>
+                </div>
+    </div>
+
+    <div style="float: left; width: 30%;margin-left: 5%;">
+        <div class="thumbnail" style="border-style: none;">
+            <img src="images/imageicon.png">
+        </div>
+        <div class="alert alert-danger" id="loginAlert"></div>
+        <form id="forPasEmailForm" style="width: 90%; margin-left: 1%;">
+            <input type="email" class="form-control" placeholder="Registered Email address" id="forPasEmail" />
+            <p id="emailText" style="color: red;"></p>
+            <button type="button" id="forEmailSubbtn" class="btn btn-primary">Submit</button>
+            <button type="button" id="forEmailCanbtn" class="btn btn-default">Cancel</button>
+        </form>
+
+        <form id="logForm" style="width: 90%;margin-left: 1%;">
+            <input type="email" class="form-control" placeholder="username" id="username">
+            <p id="userText" style="color: red;"></p>
+            <input type="password" class="form-control" placeholder="password" id="password">
+            <p id="passText" style="color: red; "></p>
+            <button type="button" class="btn btn-primary" id="logbtn" style="width: 90%;">Next</button>
+            <br>
+            <button type="button" class="btn btn-link" id="forbtn" style="width: 90%;">Forget Password</button>
+        </form>
+
+        <form id="forOtpForm" style="width: 90%;margin-left: 1%;">
+            <input type="number" class="form-control" placeholder="Enter OPT" id="forOtp" />
+            <p id="otpText" style="color: red;"></p>
+            <button type="button" id="forOtpbtn" class="btn btn-primary" style="width: 90%;">Submit</button>
+            <br>
+            <button type="button" id="forOtpRsend" class="btn btn-default" style="width: 90%; margin-top: 1%;">Resend</button>
+        </form>
+
+        <form id="setPasseordForm" style="width: 90%;margin-left: 1%;">
+            <input id="npassword" type="password" class="form-control" placeholder="Enter New Password" />
+            <p id="npassText" style="color:red;"></p>
+            <br>
+            <input id="cpassword" type="password" class="form-control" placeholder="Retype Password" />
+            <p id="cpassText" style="color:red;"></p>
+            <br>
+            <button id="resetbtn" type="button" class="btn btn-primary" style="width: 90%;">Reset</button>
+        </form>
+    </div>
+    <div style="width: 3%"></div>
+</body>
+
+</html>
